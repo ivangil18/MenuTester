@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Developer } from '../developer/developer';
 import { DeveloperService } from '../developer/developer.service';
+import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-developer-preview',
@@ -8,14 +9,8 @@ import { DeveloperService } from '../developer/developer.service';
   styleUrls: ['./developer-preview.component.css'],
 })
 export class DeveloperPreviewComponent {
-  developer?: Developer;
-
-  constructor(private developerService: DeveloperService) {}
-
-  ngOnInit() {
-    this.developerService.developerSubject.subscribe((data) => {
-      this.developer = data;
-      console.log(this.developer);
-    });
-  }
+  constructor(
+    @Inject(MAT_BOTTOM_SHEET_DATA)
+    public data: { developer: Developer; rol: string }
+  ) {}
 }

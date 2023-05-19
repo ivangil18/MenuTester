@@ -1,0 +1,27 @@
+.info,
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.info {
+  justify-content: space-between;
+}
+
+.avatar-image {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 50%;
+  /* padding: 0.3em; */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}

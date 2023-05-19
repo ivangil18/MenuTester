@@ -11,27 +11,23 @@ import { DeveloperService } from '../developer/developer.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
+  @Input() rol!: string;
   admin: boolean = false;
-  developer!: Developer;
+  @Input() developer!: Developer;
 
-  constructor(
-    private _bottomSheet: MatBottomSheet,
-    private developerService: DeveloperService
-  ) {}
+  constructor(private developerService: DeveloperService) {}
 
   ngOnInit() {
-    this.developerService.developerSubject.subscribe((data) => {
-      this.developer = data;
-
-      // if (!this.developer) {
-
-      // }
-    });
+    if (this.rol == 'admin') {
+      this.admin = true;
+    }
   }
 
-  openBottomSheet(): void {
-    this._bottomSheet.open(DeveloperPreviewComponent);
-    this.developerService.developerSelected(this.developer);
-    console.log(this.developer);
+  onShowDetails() {
+    this.developerService.showPreview(this.developer);
+  }
+
+  onDelete() {
+    this.developerService.deleteDeveloper(this.developer).subscribe();
   }
 }

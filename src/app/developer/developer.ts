@@ -3,5 +3,7 @@ export interface Developer {
   name: string;
   position: string;
   team: string;
+  project: string[];
+  skills: string[];
   rol: string;
 }
