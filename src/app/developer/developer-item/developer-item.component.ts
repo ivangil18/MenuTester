@@ -14,6 +14,6 @@ export class DeveloperItemComponent {
   constructor(private devloperService: DeveloperService) {}
   onDeveloperSelected() {
     // this.devDetailEvt.emit(this.developer);
-    this.devloperService.onShowPreview(this.developer);
+    this.devloperService.showPreview(this.developer);
   }
 }

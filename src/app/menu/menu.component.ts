@@ -24,6 +24,10 @@ export class MenuComponent {
   }
 
   onShowDetails() {
-    this.developerService.onShowPreview(this.developer);
+    this.developerService.showPreview(this.developer);
+  }
+
+  onDelete() {
+    this.developerService.deleteDeveloper(this.developer).subscribe();
   }
 }

@@ -11,7 +11,7 @@
   </button>
   <div *ngIf="admin">
     <button mat-menu-item><mat-icon matListItemIcon>edit</mat-icon>Edit</button>
-    <button mat-menu-item>
+    <button mat-menu-item (click)="onDelete()">
       <mat-icon matListItemIcon>delete</mat-icon>Delete
     </button>
   </div>

@@ -25,9 +25,14 @@ export class DeveloperService {
   //   console.log(this.developerSubject);
   // }
 
-  onShowPreview(dev: Developer) {
+  showPreview(dev: Developer) {
     this._bottomSheet.open(DeveloperPreviewComponent, {
       data: { developer: dev, rol: dev.rol },
     });
+  }
+
+  deleteDeveloper(dev: Developer) {
+    const url = `http://localhost:3000/developer/${dev.id}`;
+    return this.httpService.delete(url);
   }
 }
