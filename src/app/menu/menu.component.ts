@@ -11,12 +11,19 @@ import { DeveloperService } from '../developer/developer.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
+  @Input() rol!: string;
   admin: boolean = false;
   @Input() developer!: Developer;
 
   constructor(private developerService: DeveloperService) {}
 
-  onDetails() {
+  ngOnInit() {
+    if (this.rol == 'admin') {
+      this.admin = true;
+    }
+  }
+
+  onShowDetails() {
     this.developerService.onShowPreview(this.developer);
   }
 }

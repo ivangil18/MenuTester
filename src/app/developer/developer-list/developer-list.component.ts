@@ -13,9 +13,9 @@ export class DeveloperListComponent {
   developers: Developer[] = [];
 
   constructor(
-    private developerService: DeveloperService,
-    private _bottomSheet: MatBottomSheet
-  ) {}
+    private developerService: DeveloperService
+  ) // private _bottomSheet: MatBottomSheet
+  {}
 
   ngOnInit() {
     this.developerService.getDevelopers().subscribe((response) => {
@@ -23,9 +23,9 @@ export class DeveloperListComponent {
     });
   }
 
-  onShowPreview(dev: Developer) {
-    this._bottomSheet.open(DeveloperPreviewComponent, {
-      data: { developer: dev },
-    });
-  }
+  // onShowPreview(dev: Developer) {
+  //   this._bottomSheet.open(DeveloperPreviewComponent, {
+  //     data: { developer: dev },
+  //   });
+  // }
 }

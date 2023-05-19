@@ -10,6 +10,7 @@ import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 })
 export class DeveloperPreviewComponent {
   constructor(
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: { developer: Developer }
+    @Inject(MAT_BOTTOM_SHEET_DATA)
+    public data: { developer: Developer; rol: string }
   ) {}
 }

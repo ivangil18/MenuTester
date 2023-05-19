@@ -9,7 +9,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
   providedIn: 'root',
 })
 export class DeveloperService {
-  developerSubject = new Subject<Developer>();
+  // developerSubject = new Subject<Developer>();
 
   constructor(
     private httpService: HttpClient,
@@ -20,14 +20,14 @@ export class DeveloperService {
     return this.httpService.get<Developer[]>('http://localhost:3000/developer');
   }
 
-  developerSelected(dev: Developer) {
-    this.developerSubject.next(dev);
-    console.log(this.developerSubject);
-  }
+  // developerSelected(dev: Developer) {
+  //   this.developerSubject.next(dev);
+  //   console.log(this.developerSubject);
+  // }
 
   onShowPreview(dev: Developer) {
     this._bottomSheet.open(DeveloperPreviewComponent, {
-      data: { developer: dev },
+      data: { developer: dev, rol: dev.rol },
     });
   }
 }
