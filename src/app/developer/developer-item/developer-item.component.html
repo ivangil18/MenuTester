@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-content class="info">
+    <div class="avatar">
+      <div class="avatar-image">
+        <mat-icon matListItemIcon>person</mat-icon>
+      </div>
+      <div>
+        <mat-card-title
+          ><a (click)="openBottomSheet()">{{
+            developer.name
+          }}</a></mat-card-title
+        >
+        <mat-card-subtitle>{{ developer.position }}</mat-card-subtitle>
+      </div>
+    </div>
+    <app-menu></app-menu>
+  </mat-card-content>
+</mat-card>
