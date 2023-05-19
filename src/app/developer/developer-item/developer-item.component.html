@@ -6,13 +6,13 @@
       </div>
       <div>
         <mat-card-title
-          ><a (click)="openBottomSheet()">{{
+          ><a (click)="onDeveloperSelected()">{{
             developer.name
           }}</a></mat-card-title
         >
         <mat-card-subtitle>{{ developer.position }}</mat-card-subtitle>
       </div>
     </div>
-    <app-menu></app-menu>
+    <app-menu [developer]="developer"></app-menu>
   </mat-card-content>
 </mat-card>

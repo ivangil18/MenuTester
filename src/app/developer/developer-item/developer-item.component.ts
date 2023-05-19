@@ -1,8 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Developer } from '../developer';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { DeveloperPreviewComponent } from 'src/app/developer-preview/developer-preview.component';
-import { DeveloperService } from '../developer.service';
 
 @Component({
   selector: 'app-developer-item',
@@ -11,14 +8,9 @@ import { DeveloperService } from '../developer.service';
 })
 export class DeveloperItemComponent {
   @Input() developer!: Developer;
+  @Output() devDetailEvt = new EventEmitter();
 
-  constructor(
-    private _bottomSheet: MatBottomSheet,
-    private developerService: DeveloperService
-  ) {}
-
-  openBottomSheet(): void {
-    this._bottomSheet.open(DeveloperPreviewComponent);
-    this.developerService.developerSelected(this.developer);
+  onDeveloperSelected() {
+    this.devDetailEvt.emit(this.developer);
   }
 }

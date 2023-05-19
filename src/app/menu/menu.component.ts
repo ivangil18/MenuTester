@@ -12,26 +12,11 @@ import { DeveloperService } from '../developer/developer.service';
 })
 export class MenuComponent {
   admin: boolean = false;
-  developer!: Developer;
+  @Input() developer!: Developer;
 
-  constructor(
-    private _bottomSheet: MatBottomSheet,
-    private developerService: DeveloperService
-  ) {}
+  constructor(private developerService: DeveloperService) {}
 
-  ngOnInit() {
-    this.developerService.developerSubject.subscribe((data) => {
-      this.developer = data;
-
-      // if (!this.developer) {
-
-      // }
-    });
-  }
-
-  openBottomSheet(): void {
-    this._bottomSheet.open(DeveloperPreviewComponent);
-    this.developerService.developerSelected(this.developer);
-    console.log(this.developer);
+  onDetails() {
+    this.developerService.onShowPreview(this.developer);
   }
 }

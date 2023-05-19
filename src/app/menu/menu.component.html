@@ -6,7 +6,7 @@
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #beforeMenu="matMenu" xPosition="before">
-  <button mat-menu-item (click)="openBottomSheet()">
+  <button mat-menu-item (click)="onDetails()">
     <mat-icon matListItemIcon>info</mat-icon>Details
   </button>
   <div *ngIf="admin">
