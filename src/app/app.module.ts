@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeveloperComponent } from './developer/developer.component';
 import { DeveloperListComponent } from './developer/developer-list/developer-list.component';
-import { MenuComponent } from './menu/menu.component';
-import { DeveloperPreviewComponent } from './developer-preview/developer-preview.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { DeveloperPreviewComponent } from './shared/developer-preview/developer-preview.component';
 import { DeveloperItemComponent } from './developer/developer-item/developer-item.component';
+import { DeveloperEditComponent } from './developer/developer-edit/developer-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DeveloperItemComponent } from './developer/developer-item/developer-ite
     MenuComponent,
     DeveloperPreviewComponent,
     DeveloperItemComponent,
+    DeveloperEditComponent,
   ],
   imports: [
     BrowserModule,
