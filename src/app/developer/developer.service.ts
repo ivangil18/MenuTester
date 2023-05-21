@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Developer } from './developer';
 import { Observable, Subject } from 'rxjs';
-import { DeveloperPreviewComponent } from '../developer-preview/developer-preview.component';
+import { DeveloperPreviewComponent } from '../shared/developer-preview/developer-preview.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Injectable({

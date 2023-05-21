@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { Developer } from '../developer/developer';
-import { DeveloperService } from '../developer/developer.service';
+import { Developer } from '../../developer/developer';
+import { DeveloperService } from '../../developer/developer.service';
 import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
