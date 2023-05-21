@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
+import { DeveloperEditComponent } from './developer/developer-edit/developer-edit.component';
+import { DeveloperComponent } from './developer/developer.component';
 
+const routes: Routes = [
+  { path: 'details/:id', component: DeveloperEditComponent },
+  { path: '', component: DeveloperComponent },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
