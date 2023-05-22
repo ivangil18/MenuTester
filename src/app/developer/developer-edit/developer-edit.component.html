@@ -1,1 +1,36 @@
-<p>developer-edit works!</p>
+<mat-card-content class="info">
+  <div class="avatar">
+    <div class="avatar-image">
+      <mat-icon matListItemIcon>person</mat-icon>
+    </div>
+    <div class="profile">
+      <mat-card-title>{{ name }}</mat-card-title>
+      <mat-card-subtitle>{{ position }}</mat-card-subtitle>
+    </div>
+  </div>
+  <div class="edit">
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input type="tel" matInput placeholder="New Name" [(ngModel)]="name" />
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Position</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="New Position"
+          [(ngModel)]="position"
+        />
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <div class="button-row">
+        <button mat-raised-button (click)="onSave()">Save</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-card-content>
