@@ -17,7 +17,10 @@ export class MenuComponent {
   admin: boolean = false;
   @Input() developer!: Developer;
 
-  constructor(private eventBusService: EventBusService) {}
+  constructor(
+    private eventBusService: EventBusService,
+    private developerService: DeveloperService
+  ) {}
 
   ngOnInit() {
     if (this.rol == 'admin') {
@@ -25,6 +28,9 @@ export class MenuComponent {
     }
   }
 
+  // onShowDetails() {
+  //   this.developerService.showPreview(this.developer);
+  // }
   onShowDetails() {
     this.eventBusService.emit(new EventData('preview', this.developer));
   }

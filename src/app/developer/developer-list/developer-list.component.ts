@@ -38,10 +38,10 @@ export class DeveloperListComponent {
     this.developers = this.developers.filter((d) => d !== dev);
     this.developerService.deleteDeveloper(dev).subscribe();
   }
-
+  //Problem was here, rol was no part of the call
   private onShowPreview(dev: Developer) {
     this._bottomSheet.open(DeveloperPreviewComponent, {
-      data: { developer: dev },
+      data: { developer: dev, rol: dev.rol },
     });
   }
 }
